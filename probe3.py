@@ -1,14 +1,9 @@
-def sqInRect(lng, wdth):
-    if lng == wdth:
-        return None
-    res = []
-    while lng != wdth:
-        var = lng - wdth
-        res.append(wdth)
-        lng = var
-        if lng < wdth:
-            lng, wdth = wdth, lng
-    res.append(wdth)
-    return res
+def dig_pow(n, p):
+    sum = 0
+    for i in str(n):
+        sum += int(i) ** p
+        p += 1
+    res = divmod(sum, n)
+    return res[0] if not res[1] else -1
 
-print(sqInRect(5, 5))
+print(dig_pow(89, 1))
